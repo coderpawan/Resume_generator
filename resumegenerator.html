@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resumegenerator.css" />
+    <title>Resume Generator</title>
+</head>
+
+<body>
+
+
+    <div class="title">
+        <h1 align="center">RESUME GENERATOR</h1>
+    </div>
+    <div class="PersonalInfo" id="perso">
+        <h2 style="color:blue">Personal Information</h2>
+        <label><b>First-Name : </b></label></br>
+        <input type="text" class="p_input" id="f_name" placeholder="Enter your First-Name" required /><br>
+        <label><b>Last-Name : </b></label></br>
+        <input type="text" class="p_input" id="l_name" placeholder="Enter your Last-Name" required /><br>
+        <label><b>Father-Name : </b></label></br>
+        <input type="text" class="p_input" id="ft_name" placeholder="Enter your Father-Name" required /><br>
+        <label><b>Email-id : </b></label></br>
+        <input type="text" class="p_input" id="email" placeholder="Enter your Email-id" required /><br>
+        <label><b>Adress : </b></label></br>
+        <input type="text" class="p_input" id="address" placeholder="Enter your Adress" required /><br>
+        <label><b>Phone_No. : </b></label></br>
+        <input type="text" class="p_input" id="phone" placeholder="Enter your Phone_No." required /><br>
+        <label><b>Facebook-Profile : </b></label></br>
+        <input type="text" class="p_input" id="facebook" placeholder="Enter your Facebook id" required /><br>
+        <label><b>Instagram-Profile : </b></label></br>
+        <input type="text" class="p_input" id="insta" placeholder="Enter your Instagram id" required /><br>
+        <label><b>LinkedIn-Profile : </b></label></br>
+        <input type="text" class="p_input" id="linkedIn" placeholder="Enter your LinkedIn id" required /><br>
+        <label><b>Date of Birth : </b></label></br>
+        <input type="date" name="date" min="01-04-1998" max="01-04-2020" id="dob" placeholder="YYYY-MM-DD "
+            required /><br>
+        <label><b>Sex : </b></label></br>
+        <select name="sex" id="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Transgender">Transgender</option>
+        </select>
+        <input placeholder="Choose your Sex " required /><br>
+        <label><b>Religion : </b></label></br>
+        <select name="religion" id="religion">
+            <option value="hindu">Hindu</option>
+            <option value="muslim">Muslim</option>
+            <option value="sikh">Sikh</option>
+            <option value="christian">Christian</option>
+            <option value="buddhism">Buddhism</option>
+        </select>
+        <input placeholder="Choose your Religion" required /><br>
+        <br><br>
+        <hr>
+        </hr>
+        <h2 style="color:blue">Achievements</h2>
+        <textarea rows="4" cols="50" id="object" placeholder="Write About Your Achievements"></textarea>
+        </br></br>
+        <hr>
+        </hr>
+        <div class="qualification">
+            <h2 style="color:blue">Qualification</h2>
+            <table id="myTable" style="width:98%">
+                <col width="160">
+                <tr>
+                    <th>Class</th>
+                    <th>Year of Passing</th>
+                    <th>Board/University</th>
+                    <th>Percentage % </th>
+                </tr>
+                <col width="170">
+                <tr>
+                    <td id="class1">10<sup>th</sup></td>
+                    <td><input type="text" class="table_input" id="year1" placeholder="Enter Passing Year"></td>
+                    <td><input type="text" class="table_input1" id="bu1" placeholder="Enter B/U Name"></td>
+                    <td><input type="text" class="table_input" id="per1" placeholder="Enter Percentage"></td>
+                </tr>
+                <tr>
+                    <td>12<sup>th</sup></td>
+                    <td><input type="text" class="table_input" id="year2" placeholder="Enter Passing Year"></td>
+                    <td><input type="text" class="table_input1" id="bu2" placeholder="Enter B/U Name"></td>
+                    <td><input type="text" class="table_input" id="per2" placeholder="Enter Percentage"></td>
+                </tr>
+                <col width="350">
+                <tr>
+                    <td>Graduation</td>
+                    <td><input type="text" class="table_input" id="year3" placeholder="Enter Passing Year"></td>
+                    <td><input type="text" class="table_input1" id="bu3" placeholder="Enter B/U Name"></td>
+                    <td><input type="text" class="table_input" id="per3" placeholder="Enter Percentage"></td>
+                </tr>
+                <col width="170">
+                <tr>
+                    <td>Post-Graduation</td>
+                    <td><input type="text" class="table_input" id="year4" placeholder="Enter Passing Year"></td>
+                    <td><input type="text" class="table_input1" id="bu4" placeholder="Enter B/U Name"></td>
+                    <td><input type="text" class="table_input" id="per4" placeholder="Enter Percentage"></td>
+                </tr>
+            </table>
+            <p>
+                **Note: Enter your all information in the table . If your qualification
+                is less according to given format then prefer to fill NA instead of deleting or &nbsp &nbsp &nbsp &nbsp
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp creating the row for the sake of generating the pdf
+            </p>
+            <p align="right">
+                <button class="table_button" id="createrow" onclick="myCreateFunction()">Create row</button>
+                <button class="table_button" id="deleterow" onclick="myDeleteFunction()">Delete row</button>
+            </p>
+
+        </div>
+        <hr>
+        </hr>
+        <h2 style="color:blue">Professional-Skills</h2>
+        <textarea rows="4" cols="50" id="expert" placeholder="Write About Your Professional-Skills"></textarea>
+        <hr>
+        </hr>
+        <h2 style="color:blue">Social Skills and Hobbies</h2>
+        <textarea rows="4" cols="50" id="skill" placeholder="Write About Your Social Skills and Hobbies"></textarea>
+        </br></br>
+        <button class="pdf_button" onclick="genPDF()">Download PDF</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script type="text/javascript" src="html2canvas.js"></script>
+
+    <script src="resumegenerator.js"></script>
+</body>
+
+</html>
